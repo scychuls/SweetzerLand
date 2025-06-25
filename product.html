@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop | Sweetzerland</title>
+  <link rel="icon" href="candy.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-links">
+      <a href="index.html" class="home-link">Home</a>
+      <div class="menu">
+        <span id="menu-toggle">    Menu ▼</span>
+        <div class="dropdown" id="dropdown-menu">
+          <a href="#chewey">Chewey Candies</a>
+          <a href="#hard">Hard Candies</a>
+          <a href="#gum">Bubblegums</a>
+          <a href="#jelly">Jellies</a>
+          <a href="#choco">Chocolates</a>
+          <a href="#melt">Melt Sweets</a>
+        </div>
+      </div>
+    </div>
+    <div class="logo">
+      <img src="sweet.png" alt="Sweetzerland Logo">
+    </div>
+    <div class="extras">
+      <span id="notif-icon">
+        🔔<span id="notif-count">0</span>
+      </span>
+    
+      <span id="cart-icon">
+        🛒<span id="cart-count">0</span>
+      </span>
+    </div>
+    <div id="notif-panel" class="notif-panel hidden">
+      <h4>Notifications</h4>
+      <ul id="notif-list"></ul>
+    </div>
+    </div>
+  </header>
+  
+  <div id="cart-panel" class="cart-panel hidden" style="position: fixed; top: 80px; right: 20px; background: rgba(255,255,255,0.95); padding: 20px; border-radius: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.1); width: 300px; z-index: 1001;">
+    <h3 style="margin-bottom: 10px;">Your Cart</h3>
+    <ul id="cart-items" style="list-style: none; padding-left: 0; font-size: 14px;"></ul>
+    <p style="margin-top: 10px;">Total: ₱<span id="cart-total">0.00</span></p>
+    <button id="place-order" style="margin-top: 10px; padding: 8px 14px; background-color: #000; color: #fff; border: none; border-radius: 8px; cursor: pointer;">Place Order</button>
+  </div>
+  
+  <section id="chewey" class="product-category">
+    <h2><br><br><br>Chewey Candies</h2>
+    <div class="product-grid">
+      <div class="product" data-name="Potchi" data-price="30">
+        <img src="potchi.jpeg" alt="Potchi">
+        <h4>Potchi</h4>
+        <p>₱30.00</p>
+        <div class="product-info">A classic Filipino chewy candy known for its fruity flavors and soft, jelly-like texture, often individually wrapped. Manufacturer: Columbia International Food Products, Inc.</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Chubby" data-price="25">
+        <img src="chubby.jpg" alt="chubby">
+        <h4>Chubby</h4>
+        <p>₱25.00</p>
+        <div class="product-info">A chocolate-flavored chewy candy, a popular treat with a rich, milky cocoa taste.  Rebisco (specifically, Comfoods, Inc.)</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Frutos" data-price="60">
+        <img src="frutos.JPG" alt="frutos">
+        <h4>Frutos</h4>
+        <p>₱60.00</p>
+        <div class="product-info">Soft and chewy fruit-flavored candies, coming in various fruity tastes. Columbia International Food Products, Inc.</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Yema Candy" data-price="100">
+        <img src="yema.jpg" alt="yema">
+        <h4>Yema Candy</h4>
+        <p>₱100.00</p>
+        <div class="product-info">A traditional Filipino custard candy, rich and creamy, made primarily from egg yolks and condensed milk. It has a melt-in-your-mouth texture. Often homemade or by local small-scale businesses. No dominant commercial manufacturer.</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Sampalok Candy" data-price="80">
+        <img src="sampalok.JPG" alt="Sampalok">
+        <h4>Sampalok Candy</h4>
+        <p>₱80.00</p>
+        <div class="product-info">A sweet and sour candy made from real tamarind pulp, often coated in sugar. It offers a unique tangy and sweet experience. Often homemade or by local small-scale businesses.</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Karate Belts" data-price="35">
+        <img src="karate.jpg" alt="Karate">
+        <h4>Karate Belts Rainbow</h4>
+        <p>₱35.00</p>
+        <div class="product-info">Long, flat, and colorful gummy candies that resemble martial arts belts, typically with a sweet and slightly tangy fruit flavor. Manufacturer: Sunrise</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="hard" class="product-category">
+    <h2>Hard Candies</h2>
+    <div class="product-grid">
+      <div class="product" data-name="Monami" data-price="25">
+        <img src="monami1.jpeg" alt="Monami">
+        <h4>Monami</h4>
+        <p>₱25.00</p>
+        <div class="product-info">Small, round, hard candies known for their diverse fruit flavors. A classic Filipino staple. Manufacturer: Leslie Corporation</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Pop Stix" data-price="30">
+        <img src="lollipop.JPG" alt="Lollipop">
+        <h4>Pop Stix</h4>
+        <p>₱30.00</p>
+        <div class="product-info">Fruity lollipops, often with a vibrant color and a simple, sweet taste, a popular childhood treat. Manufacturer: Lotte Confectionery</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Stay Fresh" data-price="25">
+        <img src="fresh.png" alt="Fresh">
+        <h4>Stay Fresh</h4>
+        <p>₱25.00</p>
+        <div class="product-info">Menthol-flavored hard candies designed to give a refreshing and cool sensation. Manufacturer: Liwayway Marketing Corporation (Oishi)</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Starr" data-price="30">
+        <img src="starr.jpg" alt="starr">
+        <h4>Starr</h4>
+        <p>₱30.00</p>
+        <div class="product-info">Hard candies with various fruit flavors, often individually wrapped. Manufacturer: Rebisco (specifically, Comfoods, Inc.)</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="DooDoo" data-price="50">
+        <img src="doodoo.jpg" alt="DooDoo">
+        <h4>DooDoo</h4>
+        <p>₱50.00</p>
+        <div class="product-info">Small, fruit-flavored hard candies, often coming in assorted colors and tastes. Manufacturer: Unknown/Various smaller manufacturers.</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Butter Ball" data-price="50">
+        <img src="butter.JPG" alt="butter ball">
+        <h4>Peter's Butter Ball</h4>
+        <p>₱50.00</p>
+        <div class="product-info">Rich and creamy butter-flavored hard candies that slowly melt in your mouth, a classic comfort candy. Manufacturer: Storck</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="gum" class="product-category">
+    <h2>Bubblegums</h2>
+    <div class="product-grid">
+      <div class="product" data-name="Babble Joe" data-price="30">
+        <img src="joe1.jpg" alt="Babble Joe">
+        <h4>Babble Joe</h4>
+        <p>₱30.00</p>
+        <div class="product-info">A classic bubblegum known for its long-lasting flavor and good bubble-blowing capabilities, often in a fruity taste. Manufacturer: Columbia International Food Products, Inc.</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Bazooka" data-price="70">
+        <img src="bazooka.JPG" alt="bazooka">
+        <h4>Bazooka</h4>
+        <p>₱70.00</p>
+        <div class="product-info">An iconic bubblegum, famous for its original sweet flavor and sometimes including small comic strips inside the wrapper. Manufacturer: Bazooka Candy Brands</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="iCool" data-price="30">
+        <img src="icool.JPG" alt="iCool">
+        <h4>iCool</h4>
+        <p>₱30.00</p>
+        <div class="product-info">A refreshing bubblegum with a cool, often minty or mentholated flavor, designed to freshen breath. Manufacturer: Lotte Confectionery</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Juicy Fruit" data-price="50">
+        <img src="juicy.JPG" alt="Juicy Fruit">
+        <h4>Juicy Fruit</h4>
+        <p>₱50.00</p>
+        <div class="product-info">A well-known bubblegum with a distinctive, sweet, and tropical fruit flavor. Manufacturer: Wrigley Company</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="YAKEE!" data-price="30">
+        <img src="yakee.JPG" alt="YAKEE">
+        <h4>YAKEE!</h4>
+        <p>₱30.00</p>
+        <div class="product-info">A sweet and tangy bubblegum, often with a unique, slightly sour kick that makes it stand out. Manufacturer: Rebisco (specifically, Comfoods, Inc.)</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="PinToora" data-price="40">
+        <img src="pintoora.png" alt="PinToora">
+        <h4>Pintoora</h4>
+        <p>₱40.00</p>
+        <div class="product-info">A unique bubblegum that often comes in a tube or small container, allowing you to paint the flavor onto your tongue. Manufacturer: Mayfair Candy</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="jellies" class="product-category">
+    <h2>Jellies</h2>
+    <div class="product-grid">
+      <div class="product" data-name="JellYace" data-price="20">
+        <img src="jelly1.jpg" alt="JellYace">
+        <h4>JellYace</h4>
+        <p>₱20.00</p>
+        <div class="product-info">Small, individually sealed jelly cups filled with various fruit-flavored jellies, often containing nata de coco bits. Manufacturer: JellYace</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Jelly Stick" data-price="100">
+        <img src="stick.jpg" alt="Jelly Stick">
+        <h4>Jelly Sticks</h4>
+        <p>₱100.00</p>
+        <div class="product-info">Long, thin tubes of fruit-flavored jelly, a fun and easy-to-eat snack. Long, thin tubes of fruit-flavored jelly, a fun and easy-to-eat snack. Manufacturer: Various brands (e.g., Jin Jin)</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Nata De Coco" data-price="40">
+        <img src="nata.jpg" alt="Nata De Coco">
+        <h4>Nata De Coco Fruit Juice</h4>
+        <p>₱40.00</p>
+        <div class="product-info">A refreshing fruit-flavored drink with chewy, translucent nata de coco (coconut gel) cubes, offering both a beverage and a snack. Manufacturer: Primarily manufactured by local Filipino companies.</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Turkish Delights" data-price="150">
+        <img src="delight.jpeg" alt="Turkish Delights">
+        <h4>Turkish Delights</h4>
+        <p>₱150.00</p>
+        <div class="product-info">While not traditionally Filipino, these are soft, chewy confections, typically flavored with rosewater or citrus and dusted with powdered sugar. They have gained popularity in the Philippines. Manufacturer: Various international and local distributors.</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Orange Swits" data-price="25">
+        <img src="swits.JPG" alt="Orange Swits">
+        <h4>Orange Swits</h4>
+        <p>₱30.00</p>
+        <div class="product-info">Small, round, soft jelly candies with a distinct orange flavor, often coated in sugar. Manufacturer: Columbia International Food Products, Inc.</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Macapuno Candy" data-price="20">
+        <img src="macapuno.jpg" alt="Macapuno">
+        <h4>Macapuno Candy</h4>
+        <p>₱20.00</p>
+        <div class="product-info">A traditional Filipino candy made from sweet, gelatinous macapuno (a special type of coconut) cooked in syrup, often shaped into small balls or bars. Manufacturer: Often homemade or by local small-scale businesses.</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="Chocolates" class="product-category">
+    <h2>Chocolates</h2>
+    <div class="product-grid">
+      <div class="product" data-name="Flat Tops" data-price="120">
+        <img src="ft.JPG" alt="Flat tops">
+        <h4>Flat Tops</h4>
+        <p>₱120.00</p>
+        <div class="product-info">Iconic Filipino milk chocolate squares, known for their simple, classic, and creamy milk chocolate taste. Manufacturer: Ricoa (a brand of Comfoods, Inc., under Rebisco)</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Block Buster Chocolate" data-price="40">
+        <img src="buster.png" alt="Block Buster">
+        <h4>Block Buster Milk Chocolate</h4>
+        <p>₱40.00</p>
+        <div class="product-info">A rectangular milk chocolate bar, offering a straightforward and satisfying milk chocolate experience. Manufacturer: Mayfair Candy</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Lala" data-price="45">
+        <img src="lala.JPG" alt="Lala">
+        <h4>LaLa</h4>
+        <p>₱45.00</p>
+        <div class="product-info">Small, bite-sized milk chocolate pieces, a popular and affordable treat in the Philippines. Manufacturer: Mayfair Candy</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Curly Tops" data-price="60">
+        <img src="curly.JPG" alt="Curly Tops">
+        <h4>Curly Tops</h4>
+        <p>₱60.00</p>
+        <div class="product-info">Another beloved Filipino milk chocolate, similar to Flat Tops but with a slightly softer, more crumbly texture and a rich, sweet flavor. Manufacturer: Ricoa (a brand of Comfoods, Inc., under Rebisco)</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Coin Chocolates" data-price="40">
+        <img src="coin.JPG" alt="Golden Coin">
+        <h4>Coin Chocolates</h4>
+        <p>₱40.00</p>
+        <div class="product-info">Round, coin-shaped chocolates wrapped in gold foil, often used as party favors or for playful enjoyment. Manufacturer: Various smaller manufacturers.</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Choco Stick" data-price="50">
+        <img src="pretzel.jpg" alt="Pretzels">
+        <h4>Pretzels Choco Stick</h4>
+        <p>₱50.00</p>
+        <div class="product-info">Crispy pretzel sticks coated in a layer of sweet chocolate, offering a delightful salty-sweet combination. Manufacturer: Various brands.</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="melt" class="product-category">
+    <h2>Melt Sweets</h2>
+    <div class="product-grid">
+      <div class="product" data-name="Merengue Candy" data-price="45">
+        <img src="merengue1.jpg" alt="Merengue">
+        <h4>Merengue Candy</h4>
+        <p>₱45.00</p>
+        <div class="product-info">Light, airy, and sweet meringue kisses that melt in your mouth, often flavored with vanilla or fruit. Manufacturer: Often homemade or by local small-scale businesses.</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="MikMik" data-price="20">
+        <img src="mikmik.jpg" alt="MikMik">
+        <h4>MikMik</h4>
+        <p>₱20.00</p>
+        <div class="product-info">A powdered milk candy that you can pour directly into your mouth, offering a sweet and milky burst of flavor. Manufacturer: Unisman</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Paper Mint" data-price="25">
+        <img src="paper.jpg" alt="Paper Mint">
+        <h4>Paper Mint Menthol Candy</h4>
+        <p>₱25.00</p>
+        <div class="product-info">Thin, often translucent, menthol-flavored candies that dissolve quickly, providing a refreshing and cool sensation. Manufacturer: Brands like Candyman</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="ChocNut" data-price="50">
+        <img src="choknut.png" alt="ChocNut">
+        <h4>ChocNut</h4>
+        <p>₱50.00</p>
+        <div class="product-info">A unique and iconic Filipino treat, a crumbly and sweet peanut milk chocolate bar that melts in your mouth. Manufacturer: Unisman</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Hany" data-price="60">
+        <img src="hany.JPG" alt="Hany">
+        <h4>Hany</h4>
+        <p>₱60.00</p>
+        <div class="product-info">Similar to ChocNut, Hany is another popular crumbly peanut milk chocolate bar with a distinct sweet and nutty flavor. Manufacturer: Annie's</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="Choko-Choko" data-price="45">
+        <img src="choko.png" alt="Choko">
+        <h4>Choko-Choko</h4>
+        <p>₱45.00</p>
+        <div class="product-info">A chocolate paste or spread in a convenient stick or sachet, often enjoyed by squeezing it directly into the mouth. Manufacturer: Big C</div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="sweet.png" alt="Sweetzerland Logo" class="footer-logo">
+        <p class="footer-name">A CHILDHOOD DREAM</p>
+        <div class="footer-contact">
+          <br><p>sweetzerland@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-center">
+        <div class="footer-section">
+          <h4>Opening hours</h4>
+          <p>Monday to Friday<br>10 am to 6 pm</p>
+          <p>Saturday<br>8 am to 2 pm</p>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <a href="#">Facebook</a><br>
+          <a href="#">Instagram</a>
+        </div>
+        <div class="footer-section">
+          <h4>Email Us</h4>
+          <a href="#">sweetzerland@gmail.com</a><br>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-reviews">
+            <h4>Creators</h4>
+          <p>Samantha Julia Tabanao</p>
+          <p>Paul Paglinawan</p>
+          <p>Brylle Tabisora</p>
+          <p>Ernest Jansen Tibayan</p>
+          <p>Glendel Velarde</p>
+        </div>
+        <div class="footer-bottom">
+          <br><br><br><a href="#nav">Back to top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="footer-disclaimer">
+    <p>We don't own any images or products used on this website.</p>
+  </div>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+    let cart = [];
+
+    const cartIcon = document.getElementById('cart-icon');
+    const cartCount = document.getElementById('cart-count');
+    const cartPanel = document.getElementById('cart-panel');
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    const placeOrderBtn = document.getElementById('place-order');
+
+    const notifIcon = document.getElementById('notif-icon');
+    const notifCount = document.getElementById('notif-count');
+    const notifPanel = document.getElementById('notif-panel');
+    const notifList = document.getElementById('notif-list');
+    let notifCounter = 0;
+
+    cartIcon.addEventListener('click', () => {
+        cartPanel.classList.toggle('hidden');
+    });
+
+    notifIcon.addEventListener('click', () => {
+        notifPanel.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.add-cart').forEach(button => {
+        button.addEventListener('click', () => {
+            // Get the parent product div
+            const productDiv = button.closest('.product');
+
+            // Now get the data attributes from the productDiv
+            const name = productDiv.getAttribute('data-name');
+            const price = parseFloat(productDiv.getAttribute('data-price'));
+
+            // Check if name and price are valid before proceeding
+            if (!name || isNaN(price)) {
+                console.error('Missing data-name or data-price attributes on the product div or invalid price.', productDiv);
+                return; // Stop the function if data is invalid
+            }
+
+            const existing = cart.find(item => item.name === name);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+
+            updateCartUI();
+        });
+    });
+
+    function updateCartUI() {
+        cartItems.innerHTML = '';
+        let total = 0;
+        let count = 0;
+
+        cart.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <span style="flex: 1;">${item.name}</span>
+                    <div style="display: flex; align-items: center;">
+                        <button class="qty-btn" data-index="${index}" data-action="decrease" style="margin: 0 5px;">−</button>
+                        <span>${item.qty}</span>
+                        <button class="qty-btn" data-index="${index}" data-action="increase" style="margin: 0 5px;">+</button>
+                    </div>
+                    <span style="margin-left: 10px;">₱${(item.price * item.qty).toFixed(2)}</span>
+                </div>
+            `;
+            cartItems.appendChild(li);
+
+            total += item.price * item.qty;
+            count += item.qty;
+        });
+
+        cartTotal.textContent = total.toFixed(2);
+        cartCount.textContent = count;
+        cartCount.style.display = count > 0 ? 'inline-block' : 'none';
+
+        document.querySelectorAll('.qty-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const index = parseInt(btn.getAttribute('data-index'));
+                const action = btn.getAttribute('data-action');
+
+                if (action === 'increase') {
+                    cart[index].qty++;
+                } else if (action === 'decrease') {
+                    cart[index].qty--;
+                    if (cart[index].qty <= 0) {
+                        cart.splice(index, 1);
+                    }
+                }
+
+                updateCartUI();
+            });
+        });
+    }
+
+    placeOrderBtn.addEventListener('click', () => {
+        if (cart.length === 0) {
+            alert('Your cart is empty!');
+            return;
+        }
+
+        const confirmOrder = confirm('Are you sure you want to place your order?');
+
+        if (confirmOrder) {
+            addNotification();
+            cart = [];
+            updateCartUI();
+            cartPanel.classList.add('hidden');
+            alert('Your order was placed!');
+        }
+    });
+
+    function addNotification() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        const dateString = now.toLocaleDateString();
+        const estimated = "2–3 days";
+
+        const li = document.createElement('li');
+        li.textContent = `Order placed on ${dateString} at ${timeString}. Estimated delivery: ${estimated}.`;
+        notifList.prepend(li);
+
+        notifCounter++;
+        notifCount.textContent = notifCounter;
+        notifCount.style.display = 'inline-block';
+    }
+});
+    </script>
+
+</body>
+</html>
