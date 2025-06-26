@@ -409,17 +409,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.add-cart').forEach(button => {
         button.addEventListener('click', () => {
-            // Get the parent product div
+        
             const productDiv = button.closest('.product');
 
-            // Now get the data attributes from the productDiv
             const name = productDiv.getAttribute('data-name');
             const price = parseFloat(productDiv.getAttribute('data-price'));
 
-            // Check if name and price are valid before proceeding
             if (!name || isNaN(price)) {
                 console.error('Missing data-name or data-price attributes on the product div or invalid price.', productDiv);
-                return; // Stop the function if data is invalid
+                return; 
             }
 
             const existing = cart.find(item => item.name === name);
